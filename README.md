@@ -101,9 +101,9 @@ npx cap open ios
 > _Agregar capturas de pantalla aquí_
 
 | Login | Búsqueda de País | Detalle de País | Galería |
-|---|---|---|---|
-| ![Login](![Uploading WhatsApp Image 2026-05-08 at 4.39.18 PM.jpeg…]()
-) | ![Search](screenshots/search.png) | ![Detail](screenshots/detail.png) | ![Gallery](screenshots/gallery.png) |
+<img width="1080" height="2340" alt="WhatsApp Image 2026-05-08 at 4 39 18 PM" src="https://github.com/user-attachments/assets/dc7eb365-9ed8-4739-8164-4cb646d2a4f1" />
+
+
 
 ---
 
