@@ -35,7 +35,7 @@
 
 ```bash
 # 1. Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
+git clone <https://github.com/DavidCG2004/CountryApp.git>
 cd countryapp
 
 # 2. Instalar dependencias
