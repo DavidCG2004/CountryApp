@@ -1,0 +1,70 @@
+/* Contenedor principal para centrado vertical */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100% - 40px); /* Restamos el espacio del botón de atrás */
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Botón sutil de retroceso */
+.back-btn {
+  --color: var(--ion-color-dark);
+  margin-top: 10px;
+  margin-left: -5px; /* Para alinear con el padding del contenido */
+}
+
+/* Encabezados consistentes */
+.header-section {
+  margin-bottom: 2.5rem;
+  text-align: left;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--ion-color-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--ion-color-medium);
+    margin: 0;
+  }
+}
+
+/* Inputs de Ionic 7 adaptados */
+.form-section {
+  margin-bottom: 2rem;
+
+  .minimal-input {
+    --border-radius: 12px;
+    --border-color: rgba(var(--ion-color-medium-rgb), 0.3);
+    --padding-start: 1rem;
+    
+    ion-icon {
+      color: var(--ion-color-medium);
+      margin-right: 8px;
+    }
+  }
+}
+
+/* Botones y Acciones */
+.action-section {
+  .btn-primary {
+    --border-radius: 12px;
+    --box-shadow: 0 4px 14px rgba(var(--ion-color-primary-rgb), 0.3);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    height: 50px;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-secondary {
+    --color: var(--ion-color-primary); /* Enlace azul para destacar */
+    font-weight: 500;
+    height: 50px;
+    letter-spacing: 0.5px;
+  }
+}

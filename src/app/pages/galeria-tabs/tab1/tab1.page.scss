@@ -1,0 +1,58 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+  border: 4px solid rgba(var(--ion-color-primary-rgb), 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--ion-color-dark);
+}
+
+.profile-subtitle {
+  color: var(--ion-color-success); /* Verde para indicar "Activa" */
+  font-weight: 600;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.info-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  
+  ion-item {
+    --padding-start: 1rem;
+    --inner-padding-end: 1rem;
+    
+    h3 {
+      font-weight: 600;
+      color: var(--ion-color-dark);
+      margin-bottom: 0.2rem;
+    }
+    
+    p {
+      color: var(--ion-color-medium);
+    }
+  }
+}
+
+/* Pequeña animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

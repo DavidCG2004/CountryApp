@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- El back-button apuntando al dashboard principal -->
+      <ion-back-button defaultHref="/menu" text="Atrás"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Mi Perfil</ion-title>
+
+    <!-- 🌙 Botón modo nocturno -->
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleDarkMode()" fill="clear">
+        <ion-icon
+          slot="icon-only"
+          [name]="photoService.isDarkMode ? 'sunny-outline' : 'moon-outline'">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <div class="profile-container">
+    
+    <!-- Avatar del usuario -->
+    <ion-avatar class="profile-avatar">
+      <!-- Usamos una imagen genérica por defecto -->
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Avatar del usuario" />
+    </ion-avatar>
+    
+    <!-- Título Principal -->
+    <h2 class="profile-name">Desarrollador</h2>
+    <p class="profile-subtitle">Sesión Activa</p>
+
+    <!-- Tarjeta de Información -->
+    <ion-card class="info-card ion-margin-top">
+      
+      <ion-item lines="full">
+        <ion-icon slot="start" name="person-outline" color="primary"></ion-icon>
+        <ion-label>
+          <h3>Rol</h3>
+          <p>Administrador de la Aplicacion</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="mail-outline" color="secondary"></ion-icon>
+        <ion-label>
+          <h3>Correo Electrónico</h3>
+          <p>{{ userEmail }}</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

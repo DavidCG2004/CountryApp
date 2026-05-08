@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Buscar País</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionInput)="searchCountry()"
+    [debounce]="800"
+    placeholder="Ej. Ecuador, Japan, Canada..."
+    animated="true"
+    search-icon="search-circle">
+  </ion-searchbar>
+
+  <!-- Spinner mientras carga -->
+  <div *ngIf="isLoading" class="ion-text-center ion-padding-top">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+  </div>
+
+  <!-- Listado dinámico -->
+  <ion-list *ngIf="!isLoading && countries.length > 0">
+    <ion-item
+      *ngFor="let c of countries"
+      button
+      detail="true"
+      (click)="goToDetail(c.cca3)">
+      
+      <ion-thumbnail slot="start">
+        <img [src]="c.flags?.svg" [alt]="c.flags?.alt" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ c.name.common }}</h2>
+        <p>{{ c.region }} · {{ c.capital ? c.capital[0] : 'Sin capital' }}</p>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
+  <!-- Estado vacío -->
+  <div *ngIf="!isLoading && countries.length === 0 && searchTerm.length > 0" 
+       class="ion-text-center ion-padding-top">
+    <ion-icon name="search-circle" size="large" color="medium"></ion-icon>
+    <p>Realiza una búsqueda para ver resultados.</p>
+  </div>
+
+</ion-content>

@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Regresa al listado -->
+      <ion-back-button defaultHref="/api"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ country?.name?.common || 'Detalle' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Loading -->
+  <div *ngIf="isLoading" class="ion-text-center ion-padding-top">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="hasError" class="ion-text-center ion-padding-top">
+    <ion-icon name="earth-outline" size="large" color="danger"></ion-icon>
+    <p>No se pudo cargar la información del país.</p>
+  </div>
+
+  <!-- Detalle del país -->
+  <ion-card *ngIf="!isLoading && country" class="ion-no-margin">
+
+    <img [src]="country.flags?.svg" [alt]="country.flags?.alt" style="width:100%" />
+
+    <ion-card-header>
+      <ion-card-subtitle>{{ country.region }} · {{ country.subregion }}</ion-card-subtitle>
+      <ion-card-title>{{ country.name.common }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Nombre oficial:</strong> {{ country.name.official }}</p>
+
+      <ion-list lines="none">
+
+        <ion-item>
+          <ion-icon slot="start" name="business-outline" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Capital</h3>
+            <p>{{ country.capital ? country.capital[0] : 'N/A' }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="people-outline" color="tertiary"></ion-icon>
+          <ion-label>
+            <h3>Población</h3>
+            <p>{{ country.population | number }} habitantes</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="map-outline" color="warning"></ion-icon>
+          <ion-label>
+            <h3>Área</h3>
+            <p>{{ country.area | number }} km²</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="cash-outline" color="success"></ion-icon>
+          <ion-label>
+            <h3>Moneda</h3>
+            <p>{{ getCurrency(country.currencies) }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="language-outline" color="secondary"></ion-icon>
+          <ion-label>
+            <h3>Idiomas</h3>
+            <p>{{ getLanguages(country.languages) }}</p>
+          </ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
