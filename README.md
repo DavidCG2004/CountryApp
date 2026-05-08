@@ -102,7 +102,8 @@ npx cap open ios
 
 | Login | Búsqueda de País | Detalle de País | Galería |
 |---|---|---|---|
-| ![Login](screenshots/login.png) | ![Search](screenshots/search.png) | ![Detail](screenshots/detail.png) | ![Gallery](screenshots/gallery.png) |
+| ![Login](![Uploading WhatsApp Image 2026-05-08 at 4.39.18 PM.jpeg…]()
+) | ![Search](screenshots/search.png) | ![Detail](screenshots/detail.png) | ![Gallery](screenshots/gallery.png) |
 
 ---
 
