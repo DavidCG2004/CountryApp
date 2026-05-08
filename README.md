@@ -126,26 +126,60 @@ Este proyecto fue desarrollado con asistencia de **Claude (Anthropic)** como her
 ---
 
 ### Prompt 1 — Contexto arquitectónico inicial
-```
-Actúa como un Desarrollador Senior Angular/Ionic. Toma en cuenta este contexto 
-arquitectónico estricto (Standalone, Clean Code, inyección moderna). Cualquier código, 
-refactorización o nueva característica que propongas debe alinearse 100% con las 
+Te voy a compartir el contexto técnico y la arquitectura del proyecto en el que estoy
+trabajando. Por favor, lee este Markdown y confírmame que lo has entendido.
+Luego te haré mi pregunta.
+Actúa como un Desarrollador Senior Angular/Ionic. Toma en cuenta este contexto
+arquitectónico estricto (Standalone, Clean Code, inyección moderna). Cualquier código,
+refactorización o nueva característica que propongas debe alinearse 100% con las
 tecnologías, patrones de diseño y estándares descritos aquí.
 [Se adjuntó documento de contexto del proyecto]
-```
+**Resultado:** La IA confirmó comprensión del stack (Angular v17+ Standalone, Ionic 7+, 
+Supabase, Capacitor) y los estándares: inject(), addIcons(), servicios sin lógica UI, 
+imports standalone verificados en .ts y template.
 
 ---
 
-### Prompt 2 — Implementación de listado dinámico y página de detalle
-```
-Para el apartado de la API, ¿se realizó esto?
-Debe consumir una API pública relacionada con el tema seleccionado e incluir 
-listado dinámico, página de detalle, loading, búsqueda y manejo básico de errores.
+### Prompt 2 — Consumo de API, refactorización de servicio y listado con detalle
+Para el apartado de la API necesito implementar lo siguiente:
+consumir una API pública, incluir listado dinámico, página de detalle,
+loading, búsqueda con debounce y manejo básico de errores.
+Adjunto el código actual de CountrySearchPage y CountryService para que los refactorices
+siguiendo los estándares del proyecto.
 [Se adjuntó código existente de CountrySearchPage y CountryService]
-```
-**Resultado:** Refactorización de `country: any = null` a `countries: any[]`, 
-creación de `CountryDetailPage` con ruta `/api/country/:cca3`, y método 
-`getCountryByCode()` en el servicio.
+**Resultado:** Refactorización de `country: any = null` a `countries: any[]` con `*ngFor`, 
+creación de `CountryDetailPage` con ruta `/api/country/:cca3`, método `getCountryByCode()` 
+en el servicio, y navegación con `Router.navigate()`.
+
+---
+
+### Prompt 3 — Splash Screen en HTML
+Crea un splash screen en HTML/CSS para una app Ionic/Angular llamada CountryApp.
+Debe tener animación de entrada, ícono o logo centrado, nombre de la app
+y desaparecer automáticamente al cargar.
+**Resultado:** Archivo HTML standalone con animación CSS (fade-in + scale), 
+integrable como componente de carga inicial antes de montar la app Angular.
+
+---
+
+### Prompt 4 — Rutas protegidas con AuthGuard
+Implementa un AuthGuard funcional (CanActivateFn) para proteger las rutas privadas
+de la app. Debe verificar la sesión activa con supabaseService.getSession()
+y redirigir al login si no hay sesión. Seguir el patrón Standalone y inject().
+**Resultado:** Creación de `auth.guard.ts` con `CanActivateFn`, inyección de 
+`SupabaseService` con `inject()`, y configuración en `app.routes.ts` con `canActivate`.
+
+---
+
+### Prompt 5 — Interfaz Login, Menú y Registro minimalista
+Implementa las páginas de Login, Registro y Menú principal con un diseño
+minimalista moderno. Usar ion-input con fill="outline", labelPlacement="floating",
+botones con shape="round", contenedores centrados y LoadingController para estados
+de carga. Todo en componentes Standalone con ReactiveFormsModule donde aplique.
+**Resultado:** LoginPage con RouterLink declarativo, RegisterPage con Reactive Forms 
+y validaciones, MenuPage con IonCard de navegación y botón de cierre de sesión 
+en el header. Diseño unificado con variables CSS globales e Inter como tipografía.Sonnet 4.6
+
 
 ---
 
