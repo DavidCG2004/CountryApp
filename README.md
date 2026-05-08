@@ -98,11 +98,26 @@ npx cap open ios
 
 ## 📸 Capturas de Pantalla
 
-> _Agregar capturas de pantalla aquí_
-
-| Login | Búsqueda de País | Detalle de País | Galería |
-<img width="1080" height="2340" alt="WhatsApp Image 2026-05-08 at 4 39 18 PM" src="https://github.com/user-attachments/assets/dc7eb365-9ed8-4739-8164-4cb646d2a4f1" />
-
+<table>
+  <tr>
+    <td align="center"><b>Login</b></td>
+    <td align="center"><b>Búsqueda de País</b></td>
+    <td align="center"><b>Detalle de País</b></td>
+    <td align="center"><b>Galería</b></td>
+  </tr>
+  <tr>
+    <td><img width="200" src="https://github.com/user-attachments/assets/dc7eb365-9ed8-4739-8164-4cb646d2a4f1" /></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/14cf4ef2-e3e9-41c7-9107-faaf8d14300a" /></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/786a2d5c-099d-4e8f-ab5d-bc83561caa05" /></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/e644663d-0972-4f16-81a8-45f2e005e619" /></td>
+  </tr>
+  <tr>
+    <td><img width="200" src="https://github.com/user-attachments/assets/a8010a58-686d-41f0-8ba2-1288bc4e3136" /></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/ab718624-fd33-46d1-ab9b-d68fa35c7294" /></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/aa595266-298f-43a7-80e4-c0de597a7b3d" /></td>
+    <td><img width="200" src="https://github.com/user-attachments/assets/7b398d32-1400-4241-9ac0-c0ffeb55f47e" /></td>
+  </tr>
+</table>
 
 
 ---
